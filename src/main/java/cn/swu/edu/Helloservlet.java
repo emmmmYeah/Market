@@ -13,10 +13,10 @@ public class Helloservlet extends HttpServlet {
 
     private static final long serialVersionUID = 1198763442711986380L;
 
-    public void init() {
+    /*public void init() {
         message = "Hello, my dear!";
 
-    }
+    }*/
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         this.doPost(request, response);
@@ -24,7 +24,14 @@ public class Helloservlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         PrintWriter out= response.getWriter();
+        out.println("<center>");
         out.println("<h1>"+message+"</h1>");
-
+        String film= request.getParameter("film");
+        String editor= request.getParameter("editor");
+        String actor= request.getParameter("actor");
+        out.println("<h1>"+film+"</h1>");
+        out.println("<h1>"+editor+"</h1>");
+        out.println("<h1>"+actor+"</h1>");
+        out.println("</center>");
     }
 }
