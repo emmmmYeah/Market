@@ -1,0 +1,272 @@
+
+<html>
+<head>
+
+    <link href="mainstatic/css/style-create.css" rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style type="text/css">
+
+            /* SELECT W/IMAGE */
+            select#selectTravelCity
+            {
+               width                    : 77%;
+               height                   : 3.2em;
+               padding                  : 0.2em 0.4em 0.2em 0.4em;
+               vertical-align           : middle;
+               border                   : 0px solid;
+               -moz-border-radius       : 0.2em;
+               -webkit-border-radius    : 0.2em;
+               border-radius            : 0.2em;
+               -webkit-appearance       : none;
+               -moz-appearance          : none;
+               appearance               : none;
+               background               : #ffffff;
+               font-family              : SimHei;
+               font-size                : 1.1em;
+               color                    : RGBA(102,102,102,0.7);
+               cursor                   : pointer;
+            }
+
+            /*SELECT W/DOWN-ARROW*/
+            select#selectPointOfInterest
+            {
+               width                    : 185pt;
+               height                   : 40pt;
+               line-height              : 40pt;
+               padding-right            : 20pt;
+               text-indent              : 4pt;
+               text-align               : left;
+               vertical-align           : middle;
+               border                   : 1px solid #94c1e7;
+               -moz-border-radius       : 6px;
+               -webkit-border-radius    : 6px;
+               border-radius            : 6px;
+               -webkit-appearance       : none;
+               -moz-appearance          : none;
+               appearance               : none;
+               font-family              : SimHei;
+               font-size                : 18pt;
+               font-weight              : 500;
+               color                    : RGBA(102,102,102,0.7);
+               cursor                   : pointer;
+               outline                  : none;
+            }
+
+
+            /*LABEL FOR SELECT*/
+            label#lblSelect{ position: relative; display: inline-block;}
+
+
+            /*DOWNWARD ARROW (25bc)*/
+            label#lblSelect::after
+            {
+                content                 : "\25bc";
+                position                : absolute;
+                top                     : 0;
+                right                   : 0;
+                bottom                  : 0;
+                width                   : 20pt;
+                line-height             : 40pt;
+                vertical-align          : middle;
+                text-align              : center;
+                background              : #94c1e7;
+                color                   : #2984ce;
+               -moz-border-radius       : 0 6px 6px 0;
+               -webkit-border-radius    : 0 6px 6px 0;
+                border-radius           : 0 6px 6px 0;
+                pointer-events          : none;
+            }
+            .head-img{
+    text-align: center;
+}
+
+#img-upload{
+    display: none;
+}
+body {
+            background:url("./mainstatic/picture/in.jpg") no-repeat;
+            /*把背景图片放大到适合元素容器的尺寸，图片比例不变*/
+            background-size:120%;
+        }
+
+
+
+        </style>
+    <!--//选择框的优化-->
+    <title>Sunday Film</title>
+
+    <!--<meta name="description" content="Real estate HTML Template">
+    <meta name="keywords" content="real estate, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="mainstatic/css/bootstrap.min.css">
+
+
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="mainstatic/css/style.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section -->
+<header class="header-section">
+    <!--<a href="" class="site-logo">
+        <img src="mainstatic/picture/logo.png" alt="">
+    </a>-->
+    <nav class="header-nav">
+        <ul class="main-menu">
+            <li><a href="login.html" >首页</a></li>
+            <li><a href="./Commun">社区</a></li>
+            <li><a href="index.html" >退出</a></li>
+            <li><a href="./Single">个人</a></li>
+            <li><a href="" class="active">创作</a></li>
+        </ul>
+        <!--<div class="header-right">
+            <div class="user-panel">
+                <a href="#" class="login">Sign in</a>
+                <a href="#" class="register">Join us</a>
+            </div>
+        </div>-->
+    </nav>
+</header>
+<center>
+<div class="container">
+    <div class="hero-warp" style="text-align:center;">
+        <div class="container"><h1>Create your blog</h1></div>
+<div class="login-01" class="bk">
+    <form action="./addfilms" method="post" enctype=multipart/form-data>
+        <ul>
+            <li class="first">
+                <a href="#" class=" icon user"></a><input type="text" class="text" value="Film" name="film" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Film';}" >
+                <div class="clear"></div>
+            </li>
+            <li class="first">
+                <a href="#" class=" icon email"></a><input type="text" class="text" value="Editor" name="editor" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Editor';}" >
+                <div class="clear"></div>
+            </li>
+            <li class="first">
+                <a href="#" class=" icon phone"></a><input type="text" class="text" value="Actor" name="actor" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Actor';}" >
+                <div class="clear"></div>
+            </li>
+            <li class="first">
+                <a href="#" class=" icon phone"></a>
+                <select id="selectTravelCity" title="Select Travel Destination" name="type">
+                    <option value='Comedy'>Comedy
+                    <option value='Adventure'>Adventure
+                    <option value='Thrill'>Thrill
+                    <option value='Documentary'>Documentary
+                </select>
+                <div class="clear"></div>
+            </li>
+            <li class="first">
+                <a href="#" class=" icon phone"></a><input type="text" class="text" value="time" name="time" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'time';}" >
+                <div class="clear"></div>
+            </li>
+            <li class="first">
+                <a href="#" class=" icon phone"></a>   <div class="head-img">
+                <img src="./upload/img.png" id="my-img">
+                <input type="file" id="img-upload" name="pics"/>
+            </div>
+                <div class="clear"></div>
+            </li>
+            <li class="second">
+                <a href="#" class=" icon msg"></a><textarea value="your film review" name="review" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'review';}">Review</textarea>
+                <div class="clear"></div>
+            </li>
+        </ul>
+        <input type="submit" onclick="myFunction()" value="Submit" >
+        <div class="clear"></div>
+    </form>
+</div>
+    </div>
+</div>
+<!--start-copyright-->
+</center>
+<!--//end-copyright-->
+</body>
+<!--====== Javascripts & Jquery ======-->
+<script src="mainstatic/js/jquery-3.2.1.min.js"></script>
+<script src="mainstatic/js/bootstrap.min.js"></script>
+<script src="mainstatic/js/jquery.slicknav.min.js"></script>
+<script src="mainstatic/js/jquery.magnific-popup.min.js"></script>
+<script src="mainstatic/js/main.js"></script>
+<script>
+$(document).ready(function(){
+
+$('#my-img').click(function(){
+$('#img-upload').click();
+
+});
+
+});
+encodeURI($("#EndTime").val());
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<html>
+<head>网页没搞完，servlet也没配好哎，数据库也少了一项，图片也没上传成
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <style>
+		.menu {font-weight:bold; font-size:1em; padding:2em}
+		tr {line-height:2.5em}
+	</style>
+</head>
+<body>
+<div style='text-align:center;padding:0.7em'><h1>西南大学网上书店</h1></div>
+<div style='text-align:center;padding:0.7em'>
+    <span class='menu'><a href='./bar.html'>首 页</a></span>
+    <span class='menu'><a href='./add.html'>添 加</a></span>
+    <span class='menu'><a href='./listBook'>管理</a></span>
+    <span class='menu'><a href='./hello'>登录</a></span>
+</div>
+<center>
+    <br>
+    <form action="./addfilms" method="POST">
+        <table style='background-color:#dddddd;padding:2em'>
+            <tr><td>电影:</td><td><input type='text' name=film value=''></td></tr>
+            <tr><td>导演:</td><td><input type='text' name=editor  value=''></td></tr>
+            <tr><td>演员: </td><td><input type='text' name=actor  value=''></td></tr>
+            <tr><td>类别: </td><td>
+                <select name='type'>
+                    <option value='math'>青春
+                    <option value='computer'>恐怖
+                    <option value='culture'>悬疑
+                    <option value='fiction'>古装
+                </select>
+            </td></tr>
+            <tr><td>上映时间: </td><td><textarea name="time" cols="50" rows="5"></textarea></td></tr>
+            <tr><td colspan="2" align="center"><br><input type='submit' value="添加书籍"></td></tr>
+        </table>
+    </form>
+    </div>
+</center>
+
+</body>
+</html>-->

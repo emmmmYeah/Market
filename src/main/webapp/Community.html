@@ -1,0 +1,287 @@
+
+<html>
+<head>
+    <style>
+		.menu {font-weight:bold; font-size:1em; padding:2em}
+		tr {line-height:2.5em}
+		.header-nav {
+    text-align: right;
+    padding-top: 35px;
+    }
+    .header-section {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	padding: 0 53px;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 999;
+}
+
+.header-section.header-bg-2 {
+	background: rgba(34, 34, 34, 0.83);
+}
+.main-menu {
+	display: inline-block;
+	padding-right: 30px;
+}
+.main-menu {
+	display: inline-block;
+	padding-right: 30px;
+}
+
+.main-menu li {
+	display: inline-block;
+	position: relative;
+}
+
+.main-menu li a {
+	display: block;
+	font-size: 16px;
+	color: #ffffff;
+	font-family: "Lato", sans-serif;
+	padding: 0 1px 5px;
+	border-bottom: 2px solid transparent;
+	margin-right: 45px;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.main-menu li a:hover,
+.main-menu li a.active {
+	border-bottom: 2px solid #fdc382;
+}
+
+.main-menu li:hover>.sub-menu {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 20px;
+}
+
+	</style>
+   <link href="mainstatic/css/style-create.css" rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<link rel="stylesheet" href="mainstatic/css/style.css">-->
+    <style type="text/css">
+
+            /* SELECT W/IMAGE */
+            select#selectTravelCity
+            {
+               width                    : 77%;
+               height                   : 3.2em;
+               padding                  : 0.2em 0.4em 0.2em 0.4em;
+               vertical-align           : middle;
+               border                   : 0px solid;
+               -moz-border-radius       : 0.2em;
+               -webkit-border-radius    : 0.2em;
+               border-radius            : 0.2em;
+               -webkit-appearance       : none;
+               -moz-appearance          : none;
+               appearance               : none;
+               background               : #ffffff;
+               font-family              : SimHei;
+               font-size                : 1.1em;
+               color                    : RGBA(102,102,102,0.7);
+               cursor                   : pointer;
+            }
+
+            /*SELECT W/DOWN-ARROW*/
+            select#selectPointOfInterest
+            {
+               width                    : 185pt;
+               height                   : 40pt;
+               line-height              : 40pt;
+               padding-right            : 20pt;
+               text-indent              : 4pt;
+               text-align               : left;
+               vertical-align           : middle;
+               border                   : 1px solid #94c1e7;
+               -moz-border-radius       : 6px;
+               -webkit-border-radius    : 6px;
+               border-radius            : 6px;
+               -webkit-appearance       : none;
+               -moz-appearance          : none;
+               appearance               : none;
+               font-family              : SimHei;
+               font-size                : 18pt;
+               font-weight              : 500;
+               color                    : RGBA(102,102,102,0.7);
+               cursor                   : pointer;
+               outline                  : none;
+            }
+
+
+            /*LABEL FOR SELECT*/
+            label#lblSelect{ position: relative; display: inline-block;}
+
+
+            /*DOWNWARD ARROW (25bc)*/
+            label#lblSelect::after
+            {
+                content                 : "\25bc";
+                position                : absolute;
+                top                     : 0;
+                right                   : 0;
+                bottom                  : 0;
+                width                   : 20pt;
+                line-height             : 40pt;
+                vertical-align          : middle;
+                text-align              : center;
+                background              : #94c1e7;
+                color                   : #2984ce;
+               -moz-border-radius       : 0 6px 6px 0;
+               -webkit-border-radius    : 0 6px 6px 0;
+                border-radius           : 0 6px 6px 0;
+                pointer-events          : none;
+            }
+            .head-img{
+    text-align: center;
+}
+
+#img-upload{
+    display: none;
+}
+body {
+            background:url("./mainstatic/picture/in.jpg") no-repeat;
+            /*把背景图片放大到适合元素容器的尺寸，图片比例不变*/
+            background-size:120%;
+        }
+
+
+
+        </style>
+    <!--//选择框的优化-->
+    <title>Sunday Film</title>
+
+    <!--<meta name="description" content="Real estate HTML Template">
+    <meta name="keywords" content="real estate, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+    <!-- Stylesheets -->
+  <link rel="stylesheet" href="mainstatic/css/bootstrap.min.css">
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+<!-- Page Preloder -->
+
+
+<!-- Header Section -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section -->
+<header class="header-section">
+    <!--<a href="" class="site-logo">
+        <img src="mainstatic/picture/logo.png" alt="">
+    </a>-->
+    <nav class="header-nav">
+        <ul class="main-menu">
+            <li><a href="login.html" >首页</a></li>
+            <li><a href="./Commun">社区</a></li>
+            <li><a href="index.html" >退出</a></li>
+            <li><a href="" class="active">个人</a></li>
+            <li><a href="./Create.html" >创作</a></li>
+        </ul>
+        <!--<div class="header-right">
+            <div class="user-panel">
+                <a href="#" class="login">Sign in</a>
+                <a href="#" class="register">Join us</a>
+            </div>
+        </div>-->
+    </nav>
+</header>
+<!-- Header Section end -->
+
+<!-- Hero Section end -->
+<section class="hero-section set-bg" data-setbg="mainstatic/picture/in.jpg">
+
+</section>
+<!-- Hero Section end -->
+<div style='text-align:center;padding:0.7em'><h1>Sunday Film</h1></div>
+<center>
+    <button onclick="showfilms(1)" >1</button>
+    <button onclick="showfilms(2)">2</button>
+    <button onclick="showfilms(3)">3</button>
+    <button onclick="showfilms(4)">4</button>
+    <br><br>
+    <table style='width:70%' border='0' cellpadding='10'>
+        <tr style='background-color:#e7dc83;color:#4a1010'>
+
+            <th>film</th>
+            <th>eidtor</th>
+            <th>actor</th>
+            <th>type</th>
+            <th>time</th>
+            <th>pics</th>
+            <th>review</th>
+            <th>    </th>
+            <th>    </th>
+        </tr>
+        <tbody id="bookTable" >
+        </tbody>
+    </table>
+</center>
+
+</body>
+
+
+<script lang="JavaScript">
+
+    function showfilms(page) {
+
+
+
+$.ajax({
+            url: "./films?page=" + page,
+            method: "POST",
+            dataType: "json"
+
+        }).done(function(result){
+            updateBookTable(result.films);
+            console.log("done!");
+        }).fail(function(xhr, status){
+
+            console.log(status);
+        });
+
+        console.log("done end!");
+
+
+     }
+
+    function updateBookTable(films) {
+alert("films[0]");
+
+var t = $("#bookTable");
+        t.empty();
+console.log("wo zuoguo");
+        for (var i=films.length-1; i>=0; i--) {
+            var b = films[i];
+            var tr = i % 2 == 0 ? $("<tr style='background-color:#dcca65c9'></tr>") : $("<tr style='background-color:#eeeeee9e'></tr>");
+
+
+            tr.append("<td>" + b.film + "</td>");
+            tr.append("<td>" + b.editor + "</td>");
+            tr.append("<td>" + b.actor + "</td>");
+            tr.append("<td>" + b.type + "</td>");
+            tr.append("<td>" + b.time + "</td>");
+            tr.append("<td><img width='100px'height='100px' src='./upload/"+b.pics+"'></td>");
+            tr.append("<td>" + b.review + "</td>");
+            tr.append("<td><a href='./deleteFilm?id=" +b.id+ "'>delete</a></td>");
+            tr.append("<td><a href='./editFilm?id=" +b.id+ "'>edit</a></td>");
+
+
+
+
+            t.append(tr);
+        }
+
+    }
+
+
+
+</script>
+</html>
